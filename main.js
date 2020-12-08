@@ -9,7 +9,7 @@ const client = new Discord.Client()
 client.once('ready', () => {
     //ここから起動イベント
     console.log('SpaceServerApp 準備完了.｜v2.0')
-    client.user.setActivity('Type #.help', { type: 'PLAYING' })
+    client.user.setActivity('Type C.help', { type: 'PLAYING' })
     client.channels.cache.get('785922633312632842').send({
         embed: {
             title: "コスモちゃんBot Ready",
