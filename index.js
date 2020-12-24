@@ -3,9 +3,6 @@ const client = new Discord.Client()
 
 const request = require("request")
 
-const GUILD = '774301569654980609' //宇宙鯖(裏)のサーバーid
-const CHANNEL = '788237027921363025' //反映を行うチャンネルid
-
 const lastsendtime = {}
 const prefix = 'c/'
 
@@ -17,23 +14,6 @@ client.once('ready', () => {
     const channel = client.channels.cache.get(CHANNEL)
     channel.setName('AllMembers： ' + guild.memberCount)
     //ここまで起動イベント
-})
-
-
-
-//ここからメンバー反映イベント
-client.on('guildMemberAdd', member => {
-    if(member.guild.id === GUILD) {
-        const channel = member.guild.channels.chche.get(CHANNEL)
-        channel.setName('AllMembers： ' + member.guild.memberCount)
-    }
-})
-
-client.on('guildMemberRemove', member => {
-    if(member.guild.id === GUILD) {
-        const channel = member.guild.channels.cache.get(CHANNEL)
-        channel.setName('AllMembers： ' + member.guild.memberCount)
-    }
 })
 
 //ここからhelp,info
