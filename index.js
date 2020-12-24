@@ -8,12 +8,8 @@ const prefix = 'c/'
 
 client.once('ready', () => {
     //ここから起動イベント
-    console.log(`${client.user.tag} Ready.｜v2.4を実行`)
-    client.user.setActivity('Type c/help｜Ver2.3', { type: 'PLAYING' })
-    const guild = client.guilds.cache.get(GUILD)
-    const channel = client.channels.cache.get(CHANNEL)
-    channel.setName('AllMembers： ' + guild.memberCount)
-    //ここまで起動イベント
+    console.log(`${client.user.tag} Ready.｜ ${client.ws.ping} ms｜v3.0 +Officialを実行しています。`)
+    client.user.setActivity('c/help｜Ver3.0 +official', { type: 'PLAYING' })
 })
 
 //ここからhelp,info
