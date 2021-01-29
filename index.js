@@ -42,72 +42,85 @@ client.on('message', message => {
         .catch(console.error)
         )
     }
-    if(message.content === 'c/help') {
-        message.channel.send({
-            embed: {
-                title: "ヘルプ",
-                description: "全てのコマンドのPrefixは `c/` です。",
-                color: 0x42f569,
-                timestamp: new Date(),
-                footer: {
-                    text: "導入してくれた運営チームありがとう。"
-                },
-                image: {
-                    url: "https://media.discordapp.net/attachments/639080557338427412/788297714449252362/image0.png?width=1025&height=473"
-                },
-                fields: [
-                    {
-                        name: "**>> Bot**",
-                        value: "`about`,`info`,`help`,`ping`"
+    /*改善部分*/
+    switch(message.content){
+            case 'c/help':
+                message.channel.send({
+                embed: {
+                    title: "ヘルプ",
+                    description: "全てのコマンドのPrefixは `c/` です。",
+                    color: 0x42f569,
+                    timestamp: new Date(),
+                    footer: {
+                        text: "導入してくれた運営チームありがとう。"
                     },
-                    {
-                        name: "**>> Fun**",
-                        value: "`rand`"
+                    image: {
+                        url: "https://media.discordapp.net/attachments/639080557338427412/788297714449252362/image0.png?width=1025&height=473"
                     },
-                    {
-                        name: "**>> Tool**",
-                        value: "`time`,`saigai`,`k`,`aikon`"
+                    fields: [
+                        {
+                            name: "**>> Bot**",
+                            value: "`about`,`info`,`help`,`ping`"
+                        },
+                        {
+                            name: "**>> Fun**",
+                            value: "`rand`"
+                        },
+                        {
+                            name: "**>> Tool**",
+                            value: "`time`,`saigai`,`k`,`aikon`"
+                        },
+                        {
+                            name: "**>> Server**",
+                            value: "`stus`,`support`,`server`"
+                        },
+                        {
+                            name: "**>> Other**",
+                            value: "```md\n + メッセージ引用 <MessageLink>\n```"
+                        }
+                    ]
+                }
+            })
+            break;
+            case 'c/info':
+                message.channel.send({
+                embed: {
+                    title: "ヘルプ",
+                    description: "全てのコマンドのPrefixは `c/` です。",
+                    color: 0x42f569,
+                    timestamp: new Date(),
+                    footer: {
+                        text: "導入してくれた運営チームありがとう。"
                     },
-                    {
-                        name: "**>> Server**",
-                        value: "`stus`,`support`,`server`"
+                    image: {
+                        url: "https://media.discordapp.net/attachments/639080557338427412/788297714449252362/image0.png?width=1025&height=473"
                     },
-                    {
-                        name: "**>> Other**",
-                        value: "```md\n + メッセージ引用 <MessageLink>\n```"
-                    }
-                ]
-            }
-        })
+                    fields: [
+                        {
+                            name: "**>> Bot**",
+                            value: "`about`,`info`,`help`,`ping`"
+                        },
+                        {
+                            name: "**>> Fun**",
+                            value: "`rand`"
+                        },
+                        {
+                            name: "**>> Tool**",
+                            value: "`time`,`saigai`,`k`,`aikon`"
+                        },
+                        {
+                            name: "**>> Server**",
+                            value: "`stus`,`support`,`server`"
+                        },
+                        {
+                            name: "**>> Other**",
+                            value: "```md\n + メッセージ引用 <MessageLink>\n```"
+                        }
+                    ]
+                }
+            })
+            break;                
     }
-    if(message.content === 'c/info') {
-        message.channel.send({
-            embed: {
-                title: "最新情報",
-                description: "コスモちゃんBotに関する最新情報です。",
-                color: 0x42f569,
-                timestamp: new Date(),
-                footer: {
-                    text: "全ての情報はSpaceServer.netで確認できます。"
-                },
-                fields: [
-                    {
-                        name: "v2.4 Cosumo版リリース",
-                        value: "v2.4ではバグの修正などが盛り込まれています。\nhttps://github.com/CosumoChan/Cosumo-Chan/blob/master/patchnote/v2.4(4.2020.1).md"
-                    },
-                    {
-                        name: "使い方のWikisオープン",
-                        value: "https://github.com/CosumoChan/Cosumo-Chan/wiki/How-to-Commands"
-                    },
-                    {
-                        name: "**Ver2.2リリース。大型アップデート。**",
-                        value: "地震情報送信機能など盛り込まれたVer2.2がリリース。"
-                    }
-                ]
-            }
-        })
-    }
-})
 
 //基本コマンド
 client.on('message', message => {
